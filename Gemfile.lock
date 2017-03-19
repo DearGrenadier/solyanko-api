@@ -136,7 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  devise
+  devise (= 4.2.1)
   listen (= 3.0.8)
   pg (= 0.20)
   pry (= 0.10.4)
