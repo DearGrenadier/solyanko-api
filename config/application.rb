@@ -26,5 +26,13 @@ module SolyankoApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    # UUID
+    config.generators do |generators|
+      generators.orm :active_record, primary_key_type: :uuid
+    end
+
+    config.session_store :cookie_store, key: '_solyanko-api_session'
+    config.middleware.use ActionDispatch::Cookies # Required for all session management
+    config.middleware.use ActionDispatch::Session::CacheStore, config.session_options
   end
 end
